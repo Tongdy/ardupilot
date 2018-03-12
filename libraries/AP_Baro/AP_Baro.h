@@ -260,6 +260,7 @@ private:
 
     AP_Float                            _filtrer_range;
 
+    AP_Float                            _filtrer_range;
 };
 
 namespace AP {
