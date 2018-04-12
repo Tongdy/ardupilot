@@ -1013,4 +1013,17 @@ void DataFlash_Revo::ListAvailableLogs(AP_HAL::BetterStream *port)
     port->println("");
 }
 
+void DataFlash_Revo::get_log_info(uint16_t log_num, uint32_t &size, uint32_t &time_utc)
+{
+    uint16_t start, end;
+    get_log_boundaries(log_num, start, end);
+    if (end >= start) {
+        size = (end + 1 - start) * (uint32_t)df_PageSize;
+    } else {
+        size = (df_NumPages + end - start) * (uint32_t)df_PageSize;
+    }
+    time_utc = 0;
+}
+
+
 #endif
