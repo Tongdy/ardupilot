@@ -57,6 +57,7 @@
 #define BOARD_SPEKTRUM_PWR_ON   1
 #define BOARD_SPEKTRUM_PWR_OFF  0
 
+#define BOARD_DSM_USART _UART5
 
 
    
